@@ -1,10 +1,15 @@
 dBoard.factory('userFactory', function($http) {
 	var factory = {};
-	var user_id = ;
+	current_user = {};
+	
 
 	factory.create = function(user, callback) {
-		debugger;
+		
 		$http.post('/newuser', user).success(function(output) {
+			current_user = output;
+			console.log(current_user);
+			callback(current_user);
+
 			
 		})
 	}

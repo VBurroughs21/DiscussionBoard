@@ -1,7 +1,10 @@
-dBoard.controller('usersController', function ($http, $scope, userFactory) {
+dBoard.controller('usersController', function ($http, $scope, $location, userFactory) {
 
 	$scope.addUser = function() {
-		userFactory.create($scope.user);
+		userFactory.create($scope.user, function(){
+
+		});
+		$location.path('/dashboard');
 	}
 
 	// $scope.formData = {};
